@@ -2,7 +2,8 @@ package com.example.xbblivekotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.xbblivekotlin.MyKotlin
+import com.example.xbblivekotlin.MyLottie
+import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
 
@@ -10,7 +11,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var test = MyKotlin()
-        test.myTest()
+        val intent = Intent()
+        intent.setClass(this, MyLottie::class.java)
+        startActivity(intent)
     }
 }
