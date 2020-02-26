@@ -1,0 +1,51 @@
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+task androidJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.sourceFiles
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task androidJavadocsJar(type: Jar) {
+    classifier = 'javadoc'
+    from androidJavadocs.destinationDir
+}
+
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.sourceFiles
+}
+
+tasks.withType(JavaCompile){
+    options.encoding = "UTF-8"
+}
+
+tasks.withType(Javadoc) {
+    excludes = ['**/*.kt']
+    options.encoding = "UTF-8"
+}
+
+
+artifacts {
+    archives androidSourcesJar
+    archives androidJavadocsJar
+}
+
+uploadArchives {
+    configuration = configurations.archives
+    repositories {
+        mavenDeployer {
+            repository(url: "http://localhost:8081/repository/android-lib/") {
+                authentication(userName: "admin", password: "snoopy1")
+            }
+            pom.project {
+                name 'XBBLiveKotlin'
+                version '1.0.4'
+                artifactId 'xbblivekotlin-lib'
+                groupId 'com.chungyu.RD7'
+                packaging 'aar'
+                description 'Your Project Description HAHA'
+            }
+        }
+    }
+}

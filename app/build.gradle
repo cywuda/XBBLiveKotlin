@@ -38,3 +38,5 @@ dependencies {
 //    implementation 'com.github.cywuda:XBBLiveKotlin:1.0.1'
     implementation project('xbblivekotlin')
 }
+
+apply from: './nexus_maven.gradle'
