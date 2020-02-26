@@ -2,7 +2,7 @@ package com.example.xbblivekotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.xbblivekotlin.MyLottie
+import com.example.mylibrary.MyLottie
 import android.content.Intent
 
 class MainActivity : AppCompatActivity() {

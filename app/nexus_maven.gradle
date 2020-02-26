@@ -39,10 +39,10 @@ uploadArchives {
                 authentication(userName: "admin", password: "snoopy1")
             }
             pom.project {
-                name 'XBBLiveKotlin'
-                version '1.0.4'
-                artifactId 'xbblivekotlin-lib'
-                groupId 'com.chungyu.RD7'
+                name 'mylibrary'
+                version '1.0.0'
+                artifactId 'mylibrary'
+                groupId 'com.example.mylibrary'
                 packaging 'aar'
                 description 'Your Project Description HAHA'
             }
