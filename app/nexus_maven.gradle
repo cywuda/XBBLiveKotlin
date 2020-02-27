@@ -31,21 +31,20 @@ artifacts {
     archives androidJavadocsJar
 }
 
-uploadArchives {
-    configuration = configurations.archives
-    repositories {
-        mavenDeployer {
-            repository(url: "http://localhost:8081/repository/android-lib/") {
-                authentication(userName: "admin", password: "snoopy1")
-            }
-            pom.project {
-                name 'mylibrary'
-                version '1.0.0'
-                artifactId 'mylibrary'
-                groupId 'com.example.mylibrary'
-                packaging 'aar'
-                description 'Your Project Description HAHA'
-            }
-        }
-    }
-}
+//uploadArchives {
+//    configuration = configurations.archives
+//    repositories {
+//        mavenDeployer {
+//            repository(url: "http://localhost:8081/repository/android-lib/") {
+//                authentication(userName: "admin", password: "snoopy1")
+//            }
+//            pom.project {
+//                version '1.0.0'
+//                artifactId 'myxbb'
+//                groupId 'com.rd7'
+//                packaging 'aar'
+//                description 'Your Project Description myxbb'
+//            }
+//        }
+//    }
+//}
