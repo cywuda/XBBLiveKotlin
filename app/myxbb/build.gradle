@@ -5,7 +5,7 @@ apply plugin:'maven'
 
 android {
     compileSdkVersion 29
-//    buildToolsVersion "29.0.3"
+//    buildToolsVersion "29.0.3" // 基本上不使用
 
     defaultConfig {
         minSdkVersion 21
@@ -44,11 +44,11 @@ uploadArchives {
                 authentication(userName: "admin", password: "snoopy1")
             }
             pom.project {
-                version '1.1.0'
+                version '1.1.1'
                 artifactId 'myxbb'
                 groupId 'com.rd7'
                 packaging 'aar'
-                description 'myxbb v 1.1.0'
+                description 'myxbb v 1.1.1'
             }
         }
     }
